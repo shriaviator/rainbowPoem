@@ -1,5 +1,6 @@
 The rainbow 
 
+Version 1 
 HAs seven colors 
 
 1 red
@@ -7,5 +8,5 @@ HAs seven colors
 3 green
 4 yellow
 5 blue 
-6 violet
+6 "I dont know "
 7 I dont know
