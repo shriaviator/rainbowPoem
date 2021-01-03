@@ -51,7 +51,7 @@
         margin-top: 1.5em;
       }
 
-      div.boxTwo p:last-child{
+      div.boxTwo p:last-child {
         color: #95b8d1;
         font-weight: 900;
       }
@@ -59,7 +59,7 @@
   </head>
   <body>
     <div class="boxOne">
-      <h1 class="child--featured"><a href="../master.html">Go Home ... </a></h1>
+      <h1 class="child--featured"><a href="../index.html">Go Home ... </a></h1>
       <div class="boxTwo">
         <p>A Message You Would Like To Pass</p>
         <input type="text" name="" id="" />
@@ -73,10 +73,10 @@
 
       function getLocalStorage() {
         messageStorage.push(document.querySelector("input[type=text]").value);
-          window.localStorage.setItem(
-            "messageList",
-            JSON.stringify(messageStorage)
-          );
+        window.localStorage.setItem(
+          "messageList",
+          JSON.stringify(messageStorage)
+        );
         var beta = JSON.parse(window.localStorage.getItem("messageList")).slice(
           -5
         );
@@ -97,7 +97,6 @@
         } else {
           console.log("Hello");
 
-          
           // document.querySelector(
           //   "div.boxTwo p:last-child"
           // ).textContent = JSON.parse(window.localStorage.getItem("messageList"))

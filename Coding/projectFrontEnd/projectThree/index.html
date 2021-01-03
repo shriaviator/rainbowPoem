@@ -1,124 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quote Generator</title>
-  <style>
-
-    *{
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body{
-      
-      background-color:  #b09e99;
-      
-    }
-    .classOne{
-      display: flex;
-    justify-content: center;
-    align-items: center;
-    height:100vh;
-    }
-    .classTwo{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-      background-color:#d8cfcc ;
-      width:500px;
-      height:300px;
-      padding: 35px;
-    }
-    .button{
-      width: 150px;
-      background-color:#64b6ac;
-      padding:8px;
-      text-align: center;
-      box-shadow: 0 0 0 3px #F4AAB9;
-      color: whitesmoke;
-      
-
-    }
-    .button:hover{
-      background-color:  #b09e99;
-      transform: translateY(-2px);
-      
-    }
-    .author{
-      display: flex;
-      justify-content: flex-end;
-      width:100%;
-      color: #64b6ac;
-      font-weight: 900;
-      font-size:x-large
-    }
-  </style>
-  <script src="https://kit.fontawesome.com/ba4620771e.js" crossorigin="anonymous"></script>
-</head>
-<body>
-  <h1><a href="../master.html">Go Home ... </a></h1>
-  <div class="classOne">
-    <div class="classTwo">
-      <div id="generateButton"><p class="button">Generate Quote</p></div>
-      <div>
-        <p><span style="font-size: 48px; color: Dodgerblue;">
-          <i class="fa fa-quote-left" aria-hidden="true"></i>
-        </span><span id="spanQuote">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur sint iste optio placeat dolor labore, reprehenderit ipsum aspernatur blanditiis maiores.</span></p>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quote Generator</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: #b09e99;
+      }
+      .classOne {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .classTwo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #d8cfcc;
+        width: 500px;
+        height: 300px;
+        padding: 35px;
+      }
+      .button {
+        width: 150px;
+        background-color: #64b6ac;
+        padding: 8px;
+        text-align: center;
+        box-shadow: 0 0 0 3px #f4aab9;
+        color: whitesmoke;
+      }
+      .button:hover {
+        background-color: #b09e99;
+        transform: translateY(-2px);
+      }
+      .author {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        color: #64b6ac;
+        font-weight: 900;
+        font-size: x-large;
+      }
+    </style>
+    <script
+      src="https://kit.fontawesome.com/ba4620771e.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <h1><a href="../index.html">Go Home ... </a></h1>
+    <div class="classOne">
+      <div class="classTwo">
+        <div id="generateButton"><p class="button">Generate Quote</p></div>
+        <div>
+          <p>
+            <span style="font-size: 48px; color: Dodgerblue">
+              <i class="fa fa-quote-left" aria-hidden="true"></i> </span
+            ><span id="spanQuote"
+              >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur
+              sint iste optio placeat dolor labore, reprehenderit ipsum
+              aspernatur blanditiis maiores.</span
+            >
+          </p>
+        </div>
+        <div class="author"><p id="authorName">- Author</p></div>
       </div>
-      <div class="author"> <p id="authorName">- Author</p></div>
-     
-      </div>
-  </div>
+    </div>
 
-  <script>
-const quotes = [
-    {
-      quote:
-        "Life is too short and sweet to be spent by cribbing and complaining about things. Here are some random quotes about the most wonderful gift that we've got",
-      author: " Life"
-    },
-    {
-      quote:
-        "Humor is richly rewarding to the person who employs it. It has some value in gaining and holding attention. But it has no persuasive value at all",
-      author: "John Kenneth Galbraith"
-    },
-    {
-      quote:
-        "God save me from my friends. I can protect myself from my enemies.",
-      author: "Claude Louis Hector de Villars "
-    },
-    {
-      quote: "The price of anything is the amount of life you exchange for it.",
-      author: "David Thoreau"
-    },
-    {
-      quote:
-        "Life is like a landscape. You live in the midst of it but can describe it only from the vantage point of distance. ",
-      author: "Charles Lindbergh"
-    },
-    {
-      quote:
-        "A critic is someone who never actually goes to the battle, yet who afterwards comes out shooting the wounded.",
-      author: " Tyne Daly"
-    }
-  ] ;
-  
-  
-var generateButton = document.getElementById("generateButton")
-var spanQuote = document.getElementById("spanQuote")
-var authorName = document.getElementById("authorName")
-function quoteFunction(){
-    let random = Math.floor(Math.random()*quotes.length)
-    spanQuote.textContent = quotes[random].quote
-    authorName.textContent=quotes[random].author
-  }
-generateButton.addEventListener("click",quoteFunction)
-  </script>
-</body>
+    <script>
+      const quotes = [
+        {
+          quote:
+            "Life is too short and sweet to be spent by cribbing and complaining about things. Here are some random quotes about the most wonderful gift that we've got",
+          author: " Life",
+        },
+        {
+          quote:
+            "Humor is richly rewarding to the person who employs it. It has some value in gaining and holding attention. But it has no persuasive value at all",
+          author: "John Kenneth Galbraith",
+        },
+        {
+          quote:
+            "God save me from my friends. I can protect myself from my enemies.",
+          author: "Claude Louis Hector de Villars ",
+        },
+        {
+          quote:
+            "The price of anything is the amount of life you exchange for it.",
+          author: "David Thoreau",
+        },
+        {
+          quote:
+            "Life is like a landscape. You live in the midst of it but can describe it only from the vantage point of distance. ",
+          author: "Charles Lindbergh",
+        },
+        {
+          quote:
+            "A critic is someone who never actually goes to the battle, yet who afterwards comes out shooting the wounded.",
+          author: " Tyne Daly",
+        },
+      ];
+
+      var generateButton = document.getElementById("generateButton");
+      var spanQuote = document.getElementById("spanQuote");
+      var authorName = document.getElementById("authorName");
+      function quoteFunction() {
+        let random = Math.floor(Math.random() * quotes.length);
+        spanQuote.textContent = quotes[random].quote;
+        authorName.textContent = quotes[random].author;
+      }
+      generateButton.addEventListener("click", quoteFunction);
+    </script>
+  </body>
 </html>
 
 <!--
