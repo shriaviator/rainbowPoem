@@ -1,99 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Counter Project</title>
-  <style>
-    *{
-      box-sizing: border-box;
-      margin:0;
-      padding:0;
-    }
-    body{
-      background: url("mainBcg.jpeg") center/cover fixed no-repeat;
-    }
-    .container{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      border:1px solid white;
-      min-width:300px;
-      max-width:40%;
-      margin:30px auto;
-      height: 400px;
-      box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.9);
-  border-radius: 0.2rem;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter Project</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background: url("mainBcg.jpeg") center/cover fixed no-repeat;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid white;
+        min-width: 300px;
+        max-width: 40%;
+        margin: 30px auto;
+        height: 400px;
+        box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.9);
+        border-radius: 0.2rem;
+      }
 
+      div.containerTwo {
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-around;
+      }
+      div.containerTwo button {
+        background-color: #0d2c54;
+        color: white;
+        padding: 5px;
+        border: 1px solid #0d2c54;
+        border-radius: 3px;
+      }
 
-    div.containerTwo{
-      width:80%;
-margin:0 auto;
-display: flex;
-justify-content: space-around;
-    }
-    div.containerTwo button{
-background-color:#0d2c54 ;
-color:white;
-padding: 5px;
-border:1px solid #0d2c54;
-border-radius: 3px;
-
-    }
-
-    div.containerTwo button:hover{
-      background-color:#00a6ed;
-      
-    }
-    div.container p:nth-child(1){
-      font-size:60px;
-      color:white;
-    }
-    div.container p:nth-child(2){
-      font-size:120px;
-      color:white;
-      font-weight: 900;
-    }
-  </style>
-</head>
-<body>
-  <h1><a href="../master.html">Go Home ! ....</a></h1>
-  <div class="container">
-    <p>COUNTER</p>
-    <p>1</p>
-    <div class="containerTwo">
-      <button>Lower Count</button>
-      <button>Add Count</button>
+      div.containerTwo button:hover {
+        background-color: #00a6ed;
+      }
+      div.container p:nth-child(1) {
+        font-size: 60px;
+        color: white;
+      }
+      div.container p:nth-child(2) {
+        font-size: 120px;
+        color: white;
+        font-weight: 900;
+      }
+    </style>
+  </head>
+  <body>
+    <h1><a href="../index.html">Go Home ! ....</a></h1>
+    <div class="container">
+      <p>COUNTER</p>
+      <p>1</p>
+      <div class="containerTwo">
+        <button>Lower Count</button>
+        <button>Add Count</button>
+      </div>
     </div>
-  </div>
-  <script>
-document.querySelector("div.containerTwo button:nth-child(2)").addEventListener("click",(e=>{
+    <script>
+      document
+        .querySelector("div.containerTwo button:nth-child(2)")
+        .addEventListener("click", (e) => {
+          document.querySelector("div.container p:nth-child(2)").innerHTML =
+            parseInt(
+              document.querySelector("div.container p:nth-child(2)").textContent
+            ) + 1;
 
-document.querySelector("div.container p:nth-child(2)").innerHTML=parseInt(document.querySelector("div.container p:nth-child(2)").textContent)+ 1
+          if (
+            parseInt(
+              document.querySelector("div.container p:nth-child(2)").textContent
+            ) > 0
+          ) {
+            console.log("hello");
+            document.querySelector("div.container p:nth-child(2)").style.color =
+              "green";
+            document.querySelector(
+              "div.container p:nth-child(2)"
+            ).style.fontSize = "120px";
+          }
+        });
+      document
+        .querySelector("div.containerTwo button:nth-child(1)")
+        .addEventListener("click", (e) => {
+          document.querySelector("div.container p:nth-child(2)").innerHTML =
+            parseInt(
+              document.querySelector("div.container p:nth-child(2)").textContent
+            ) - 1;
 
-if(parseInt(document.querySelector("div.container p:nth-child(2)").textContent)>0){
-  console.log("hello")
-  document.querySelector("div.container p:nth-child(2)").style.color="green" ;
-  document.querySelector("div.container p:nth-child(2)").style.fontSize = "120px" ;
-}
-
-}))
-document.querySelector("div.containerTwo button:nth-child(1)").addEventListener("click",(e=>{
-
-document.querySelector("div.container p:nth-child(2)").innerHTML=parseInt(document.querySelector("div.container p:nth-child(2)").textContent)- 1
-
-if(parseInt(document.querySelector("div.container p:nth-child(2)").textContent)<0){
-  console.log("hello")
-  document.querySelector("div.container p:nth-child(2)").style.color="red"; 
-  document.querySelector("div.container p:nth-child(2)").style.fontSize = "120px" ;
-}
-}))
-
-
-  </script>
-</body>
+          if (
+            parseInt(
+              document.querySelector("div.container p:nth-child(2)").textContent
+            ) < 0
+          ) {
+            console.log("hello");
+            document.querySelector("div.container p:nth-child(2)").style.color =
+              "red";
+            document.querySelector(
+              "div.container p:nth-child(2)"
+            ).style.fontSize = "120px";
+          }
+        });
+    </script>
+  </body>
 </html>
 
 <!--
