@@ -65,3 +65,26 @@ Use Variable for colors   */
 .active p:after {
   content: "\2796"; /* Unicode character for "minus" sign (-) */
 }
+
+.category {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+@media screen and (max-width: 800px) {
+  .boxQuestion {
+    width: 100%;
+    margin: 0 0.5rem;
+    text-align: center;
+    border: 2px solid green;
+  }
+
+  .category {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+}
