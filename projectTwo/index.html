@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Two</title>
+  <style>
+    *{
+      box-sizing: border-box;
+    }
+    #myButton{
+      position: absolute;
+      top:50%;
+      left:50%;
+      transform: translate(-50%,-50%);
+    }
+    div#dabbaOne{
+      position: relative;
+      width:100vw;
+      height:100vh;
+      background-color: aliceblue;
+    }
+  </style>
+</head>
+<body>
+<a href="../master.html">Go Home</a>
+<div id="dabbaOne">
+<div id="myButton">
+  <h1 id="hexValue"></h1>
+  <button>Click me </button>
+</div>
+ 
+</div>
+<script>
+  document.querySelector("button").addEventListener("click",MeraFunction)
+  function MeraFunction(){
+    let alpha = (Math.random()* 0xffffff).toString(16).slice(0,6)
+console.log(alpha)
+let beta = "#" + alpha
+console.log(beta)
+document.getElementById("dabbaOne").style.backgroundColor= beta
+    document.querySelector("#hexValue").innerHTML = "HexColor:" + beta.toUpperCase() ;
+  }
+</script>
+</body>
+</html>
+
+
+<!--
+  Learnings : 
+  Css :
+  Js : document methods and properties such as query selector and get elements by className and also a revsion of html collection Object 
+  Html :
+-->

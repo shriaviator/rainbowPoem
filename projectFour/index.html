@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pass the Message</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: #95b8d1;
+      }
+      .child--featured {
+        align-self: flex-start;
+      }
+
+      .boxOne {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        border: 1px solid red;
+      }
+      .boxTwo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-grow: 1;
+        border: 1px solid red;
+        max-width: 900px;
+        min-width: 700px;
+        background-color: #f5f5f5;
+      }
+      input[type="text"] {
+        width: 80%;
+        margin: 2em;
+        padding: 0.8em;
+        border: 4px solid #8842d5;
+        border-radius: 5px;
+      }
+      input[type="text"]:focus {
+        background-color: #8842d5;
+      }
+      div.boxTwo p {
+        font-size: 1.5em;
+        margin-top: 1.5em;
+      }
+
+      div.boxTwo p:last-child{
+        color: #95b8d1;
+        font-weight: 900;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="boxOne">
+      <h1 class="child--featured"><a href="../master.html">Go Home ... </a></h1>
+      <div class="boxTwo">
+        <p>A Message You Would Like To Pass</p>
+        <input type="text" name="" id="" />
+        <button>Submit</button>
+        <p>Last Message Delivered</p>
+        <p>Idhar Message Aayega</p>
+      </div>
+    </div>
+    <script>
+      var messageStorage = [];
+
+      function getLocalStorage() {
+        messageStorage.push(document.querySelector("input[type=text]").value);
+          window.localStorage.setItem(
+            "messageList",
+            JSON.stringify(messageStorage)
+          );
+        var beta = JSON.parse(window.localStorage.getItem("messageList")).slice(
+          -5
+        );
+        console.log(beta);
+        document.querySelector("div.boxTwo p:last-child").innerHTML = "";
+        var ol = document.createElement("ol");
+        document.querySelector("div.boxTwo p:last-child").appendChild(ol);
+        beta.forEach((element) => {
+          let li = document.createElement("li");
+          ol.appendChild(li);
+          li.innerHTML += element;
+        });
+      }
+
+      function submitFunction() {
+        if (document.querySelector("input[type=text]").value == "") {
+          alert("kuch toh likh");
+        } else {
+          console.log("Hello");
+
+          
+          // document.querySelector(
+          //   "div.boxTwo p:last-child"
+          // ).textContent = JSON.parse(window.localStorage.getItem("messageList"))
+          //   .slice(-5)
+          //   .toString();
+          getLocalStorage();
+          document.querySelector("input[type=text]").value = "";
+        }
+      }
+      let submitButton = document.querySelector("button");
+      submitButton.addEventListener("click", submitFunction);
+    </script>
+  </body>
+</html>
+
+<!--
+  Project Summary :
+
+ Key Learnings : 
+  Css : descendant selector , attribute selector , type selector , child selector , flex grow , flex basis , flex shrink , vh and vw, max-width : min width 
+  Js : event Listeners , local Storage 
+  Html :
+  Biggest TakeAway : The journey continues . 
+
+
+-->
