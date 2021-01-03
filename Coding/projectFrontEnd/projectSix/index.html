@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Slider</title>
+  <style>
+    *{
+      box-sizing: border-box;
+      margin:0;
+      padding: 0;
+    }
+    body{
+      background-color: #f2fdff;
+    }
+    .containerOne {
+     
+      width:60vw;
+      height: 70vh;
+      margin: 0 auto;
+      position: relative;
+      /* border:30px solid red */
+    }
+    .containerOne .leftButton{
+      background-color: #4092cc;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left:-17px;
+      font-size: 2rem;
+      border: 2px solid #4092cc;
+      border-radius: 8px;
+      padding: 4px;
+      
+      
+    }
+     .containerOne .leftButton:hover ,.containerOne .rightButton:hover{
+      background-color: #f2fdff;
+      cursor: pointer;
+    } 
+
+    .containerOne .rightButton{
+      background-color:#4092cc;
+      border: 2px solid #4092cc;
+      border-radius: 8px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right:-17px;
+      font-size: 2rem;
+      padding: 4px;
+    }
+    .containerOne img{
+      width:100%;
+      height: 100%;
+     object-fit:fill;
+     border: 8px solid #4092cc;
+      border-radius: 5px;
+    }
+  </style>
+  <script src="https://kit.fontawesome.com/ba4620771e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+ <h1><a href="../master.html">Go Home ... !!</a></h1> 
+ <div class="containerOne">
+   <img src="./contBcg-0.jpeg">
+   <button><span class="leftButton"><i class="fas fa-chevron-left"></i></span></button>
+   <button><span class="rightButton"><i class="fas fa-chevron-right"></i></span></button>
+ </div>
+ <script>
+  var alpha =0;
+  var beta =4;
+function Myfunction(){
+  
+  if(alpha <4){
+    alpha =alpha+1
+    console.log(alpha)
+    document.querySelector(".containerOne img").src=`./contBcg-${alpha}.jpeg`
+  }
+  else{
+    alpha=0;
+    console.log(alpha)
+    document.querySelector(".containerOne img").src=`./contBcg-${alpha}.jpeg`
+  }
+}
+function MyfunctionTwo(){
+  
+  if(beta >1){
+    beta =beta-1
+    console.log(beta)
+    document.querySelector(".containerOne img").src=`./contBcg-${beta}.jpeg`
+  }
+  else{
+    beta=4;
+    console.log(beta)
+    document.querySelector(".containerOne img").src=`./contBcg-${beta}.jpeg`
+  }
+}
+ document.querySelector(".leftButton").addEventListener("click",Myfunction);
+ document.querySelector(".rightButton").addEventListener("click",MyfunctionTwo)
+ </script>
+</body>
+</html>
+<!--
+  Project Summary : Working with images and making a common gallery . 
+
+ Key Learnings :images and working with images and the problems face 
+ images are either part of the content or are the background . Two distinct problems face when working with images  one is ardirection other is of image quality . identifying the problem and clearly dewcribing is always the first step in finding the solution . 
+  Css :
+  Js :
+  Html :
+  Biggest TakeAway :
+
+-->

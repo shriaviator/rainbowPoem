@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project One </title>
+  <style>
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1000px;
+  width:100vw;
+
+}
+.fixed {
+position:-webkit-sticky;
+position: -webkit-sticky;
+  position: sticky;
+top:0px;
+background-color: yellow;
+}
+
+
+    </style>
+
+</head>
+<body class="parent">
+  <h2>Sticky Element: Scroll Down to See the Effect</h2>
+<p>Scroll down this page to see how  sticky positioning works.</p>
+  <div class="fixed">
+    <h1 ><a href="../master.html">Go Home</a> </h1> 
+  </div>
+ 
+ <div class="center" id="demo">
+
+
+  <button onclick="myFunction()"  >Click Me </button>
+
+ </div>
+<script>
+
+function myFunction (){
+
+let alpha = (Math.random()* 0xffffff).toString(16).slice(0,6)
+console.log(alpha)
+let beta = "#" + alpha
+console.log(beta)
+document.getElementById("demo").style.backgroundColor= beta
+
+}
+
+</script>
+</body>
+</html>
+<!--
+  Learnings : 
+  Css :
+  Js :
+  Html :
+Under centering a block element using various methods
+Article used as reference : https://css-tricks.com/centering-css-complete-guide/
+Centering Seems to be a very complex topic  and will be learnt at a later stage 
+javscript is a weird language 
+This is a begginig lets c where we progress from here 
+use of hexadecimal code 
+use of position property in css 
+
+My approach versus the website approach :
+addEventLostener versus inline click 
+
+-->
