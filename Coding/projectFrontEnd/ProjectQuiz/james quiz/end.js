@@ -1,3 +1,5 @@
+debugger;
+
 const username = document.getElementById("username");
 const saveScoreBtn = document.getElementById("saveScoreBtn");
 const finalScore = document.getElementById("finalScore");
@@ -15,7 +17,8 @@ username.addEventListener("keyup", () => {
 
 saveHighScore = (e) => {
   e.preventDefault();
-
+  console.log("test");
+  debugger;
   const score = {
     score: mostRecentScore,
     name: username.value,
@@ -25,5 +28,7 @@ saveHighScore = (e) => {
   highScores.splice(5);
 
   localStorage.setItem("highScores", JSON.stringify(highScores));
-  window.location.assign("../index.html");
+  console.log("one");
+  window.location.assign("./highscores.html");
+  console.log("twi");
 };
