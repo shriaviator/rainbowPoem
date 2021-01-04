@@ -77,7 +77,7 @@ getQuestions().then((data) => {
 </div>`;
   });
 
-  document.body.innerHTML = html;
+  document.querySelector(".master").innerHTML = html;
   assignFunction();
 });
 
