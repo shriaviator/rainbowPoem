@@ -88,3 +88,7 @@ Use Variable for colors   */
     padding: 1rem;
   }
 }
+
+.heading {
+  margin: 3rem 0.5rem;
+}
