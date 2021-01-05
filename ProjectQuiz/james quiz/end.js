@@ -1,4 +1,4 @@
-debugger;
+// debugger;
 
 const username = document.getElementById("username");
 const saveScoreBtn = document.getElementById("saveScoreBtn");
@@ -18,7 +18,7 @@ username.addEventListener("keyup", () => {
 saveHighScore = (e) => {
   e.preventDefault();
   console.log("test");
-  debugger;
+  // debugger;
   const score = {
     score: mostRecentScore,
     name: username.value,

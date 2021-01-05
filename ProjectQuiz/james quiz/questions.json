@@ -1,26 +1,86 @@
 [
   {
-    "question": "Inside which HTML element do we put the JavaScript??",
-    "choice1": "<script>",
-    "choice2": "<javascript>",
-    "choice3": "<js>",
-    "choice4": "<scripting>",
-    "answer": 1
-  },
-  {
-    "question": "What is the correct syntax for referring to an external script called 'xxx.js'?",
-    "choice1": "<script href='xxx.js'>",
-    "choice2": "<script name='xxx.js'>",
-    "choice3": "<script src='xxx.js'>",
-    "choice4": "<script file='xxx.js'>",
+    "question": " Simple synchro system is used for ",
+    "choice1": "To turn light load ",
+    "choice2": "to turn heavy load  along with other components",
+    "choice3": "both",
+    "choice4": "",
     "answer": 3
   },
   {
-    "question": " How do you write 'Hello World' in an alert box?",
-    "choice1": "msgBox('Hello World');",
-    "choice2": "alertBox('Hello World');",
-    "choice3": "msg('Hello World');",
-    "choice4": "alert('Hello World');",
-    "answer": 4
+    "question": "What to check in PCB :",
+    "choice1": "Extra Copper foil should be removed ",
+    "choice2": "Base material should be free from flaking",
+    "choice3": "both",
+    "choice4": "",
+    "answer": 3
+  },
+  {
+    "question": "How to identify  anode and cathode  photo diode",
+    "choice1": "A tab extending from  cathode ",
+    "choice2": "Anode is larger than cathode ",
+    "choice3": "Color coding ",
+    "choice4": "",
+    "answer": 1
+  },
+  {
+    "question": " Cmos used in ",
+    "choice1": "manual system",
+    "choice2": "aircraft system ",
+    "choice3": "track system ",
+    "choice4": "",
+    "answer": 2
+  },
+  {
+    "question": " IC is mounted on",
+    "choice1": "Surface of processor ",
+    "choice2": "Core of processor ",
+    "choice3": "",
+    "choice4": "",
+    "answer": 2
   }
+  ,
+  {
+    "question": "Damper is used in servo system for ",
+    "choice1": "Oscillation in high speed ",
+    "choice2": "spinng in high speed ",
+    "choice3": "Both",
+    "choice4": "",
+    "answer": 3
+  },
+  {
+    "question": "Power supply in a torque synchro ",
+    "choice1": "rotor stator both in parrlel ",
+    "choice2": "",
+    "choice3": "",
+    "choice4": "",
+    "answer": 1
+  },
+  {
+    "question": "TTL VOLTAGE ",
+    "choice1": "3",
+    "choice2": "4",
+    "choice3": "5",
+    "choice4": "6",
+    "answer": 3
+  }
+  ,
+  {
+    "question": "which one is heavily doped",
+    "choice1": "base",
+    "choice2": "collector",
+    "choice3": "emmiter",
+    "choice4": "",
+    "answer": 3
+  }
+  ,
+  {
+    "question": " COLLECTOR IS ALWAYS REVERSE BISED W.R.T ",
+    "choice1": "EMMITER ",
+    "choice2": "BASE  ",
+    "choice3": "COLLECTOR ",
+    "choice4": "alert('Hello World');",
+    "answer": 2
+  }
+  
 ]

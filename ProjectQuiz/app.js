@@ -38,23 +38,22 @@ function assignFunction() {
 
 var questions = [];
 async function getQuestions() {
-  let response = await fetch(
-    "https://opentdb.com/api.php?amount=10&category=23&type=multiple"
-  );
+  let response = await fetch("./james quiz/questions.json");
   let jsonResponse = await response.json();
   return jsonResponse;
 }
 
 getQuestions().then((data) => {
   // console.log("two");
+
   console.log(data);
   let html = "";
-  let response = data["results"];
+  let response = data;
   response.forEach((element) => {
-    let answerset = element["incorrect_answers"];
-    answerset.push(element["correct_answer"]);
-    let xray = element["correct_answer"];
-    answerset = shuffle(answerset);
+    // let answerset = element["incorrect_answers"];
+    // answerset.push(element["correct_answer"]);
+    // let xray = element["correct_answer"];
+    // answerset = shuffle(answerset);
     // console.log();
     // console.log(answerset, xray);
 
@@ -62,17 +61,17 @@ getQuestions().then((data) => {
   <div class="boxQuestion__accordian"><p>Question :${element.question}</p></div>
   <div class="boxQuestion__panel">
     <div class= "category">
-      <p>Category:${element.category}</p>
-      <p>Type : ${element.type}</p>
-      <p>Difficulty:${element.difficulty}</p>
+      <p>Category:Module 4</p>
+      <p>Type : b1</p>
+      <p>Difficulty:hard</p>
     </div>
     <div>
-      <p>Option 1 :${answerset[0]}</p>
-      <p>Option 2 :${answerset[1]}</p>
-      <p>Option 3 :${answerset[2]}</p>
-      <p>Option 4 :${answerset[3]}</p>
+      <p>Option 1 :${element.choice1}</p>
+      <p>Option 2 :${element.choice2}</p>
+      <p>Option 3 :${element.choice3}</p>
+      <p>Option 4 :${element.choice4}</p>
     </div>
-    <div><p>Correct Answer :${element["correct_answer"]}</p></div>
+    <div><p>Correct Answer :Option ${element["answer"]}</p></div>
   </div>
 </div>`;
   });
