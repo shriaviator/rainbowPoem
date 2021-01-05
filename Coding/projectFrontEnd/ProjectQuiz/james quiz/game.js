@@ -10,36 +10,36 @@ let acceptingAnswers = false;
 let score = 0;
 let questionCounter = 0;
 let availableQuesions = [];
-
+// debugger;
 let questions = [];
 
-fetch(
-  "https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple"
-)
+fetch("./questions.json")
   .then((res) => {
+    // console.log(res.json());
     return res.json();
   })
   .then((loadedQuestions) => {
-    questions = loadedQuestions.results.map((loadedQuestion) => {
-      const formattedQuestion = {
-        question: loadedQuestion.question,
-      };
+    // console.log(loadedQuestions);
+    // questions = loadedQuestions.results.map((loadedQuestion) => {
+    //   const formattedQuestion = {
+    //     question: loadedQuestion.question,
+    //   };
+    //   // console.log
+    //   const answerChoices = [...loadedQuestion.incorrect_answers];
+    //   formattedQuestion.answer = Math.floor(Math.random() * 4) + 1;
+    //   answerChoices.splice(
+    //     formattedQuestion.answer - 1,
+    //     0,
+    //     loadedQuestion.correct_answer
+    //   );
 
-      const answerChoices = [...loadedQuestion.incorrect_answers];
-      formattedQuestion.answer = Math.floor(Math.random() * 4) + 1;
-      answerChoices.splice(
-        formattedQuestion.answer - 1,
-        0,
-        loadedQuestion.correct_answer
-      );
-
-      answerChoices.forEach((choice, index) => {
-        formattedQuestion["choice" + (index + 1)] = choice;
-      });
-
-      return formattedQuestion;
-    });
-
+    //   answerChoices.forEach((choice, index) => {
+    //     formattedQuestion["choice" + (index + 1)] = choice;
+    //   });
+    //   console.log(formattedQuestion);
+    //   return formattedQuestion;
+    // });
+    questions = loadedQuestions;
     startGame();
   })
   .catch((err) => {
@@ -48,7 +48,7 @@ fetch(
 
 //CONSTANTS
 const CORRECT_BONUS = 10;
-const MAX_QUESTIONS = 3;
+const MAX_QUESTIONS = 10;
 
 startGame = () => {
   questionCounter = 0;
@@ -111,3 +111,9 @@ incrementScore = (num) => {
   score += num;
   scoreText.innerText = score;
 };
+
+///////////////////////////////////////////////////
+// Trying to work with local json code
+////////////////////////////////////
+
+// fetch();
